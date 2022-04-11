@@ -1,0 +1,28 @@
+spring:
+  context: annotation-config
+  datasource:
+    username: root
+    password: 123456
+    url: jdbc:mysql://10.108.18.73:3306/seckill?serverTimezone=GMT
+#    url: jdbc:mysql://127.0.0.1:3306/seckill?serverTimezone=GMT
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    type: com.alibaba.druid.pool.DruidDataSource
+#   druid配置
+    initialSize: 5
+    minIdle: 5
+    maxActive: 20
+    maxWait: 60000
+    timeBetweenEvictionRunsMillis: 2000
+#    minEvictableIdleTimeMillis: 600000
+#    maxEvictableIdleTimeMillis: 900000
+    validationQuery: select 1
+    keepAlive: true
+    phyMaxUseCount: 1000
+#   用于监控sql
+    filters: stat
+
+tokenservice:
+#  url: http://127.0.0.1:8081/token
+  url: http://10.108.18.76:8081/token
+productcache:
+  maxcachesize:1000000
